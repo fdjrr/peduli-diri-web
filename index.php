@@ -6,10 +6,7 @@ if (!isset($_SESSION["loggined"])) {
     echo "<script>window.location.replace('" . BASE_URL . "/login.php');</script>";
 }
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://api.kawalcorona.com/indonesia/");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$output = json_decode((curl_exec($ch)));
+
 ?>
 
 <!doctype html>
@@ -68,26 +65,19 @@ $output = json_decode((curl_exec($ch)));
     <div class="container mt-4">
         <!-- Row Content Section Start -->
         <div class="row">
-            <div class="col-3">
-                <!-- Figure Logo Section Start -->
-                <figure>
-                    <img src="./assets/img/covid-19.png" class="mb-2" alt="Covid 19" width="160px">
-                    <figcaption>Informasi tentang COVID-19 di Indonesia</figcaption>
-                </figure>
-                <!-- Figure Logo Section End -->
-                <!-- Card Section Start -->
-                <div class="card border-0">
+            <div class="col-3 text-center">
+                <div class="card border-0 d-flex justify-content-center text-center">
                     <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Positif &ndash; <?= $output[0]->positif ?></li>
-                            <li class="list-group-item">Sembuh &ndash; <?= $output[0]->sembuh ?></li>
-                            <li class="list-group-item">Meninggal &ndash; <?= $output[0]->meninggal ?></li>
-                            <li class="list-group-item">Dirawat &ndash; <?= $output[0]->dirawat ?></li>
-                        </ul>
+                        <!-- Figure Logo Section Start -->
+                        <figure>
+                            <img src="./assets/img/covid-19.png" class="mb-2" alt="Covid 19" width="160px">
+                            <figcaption>Ketika kamu memiliki banyak waktu di dunia dan tidak tahu harus berbuat apa
+                                dengannya.
+                            </figcaption>
+                        </figure>
+                        <!-- Figure Logo Section End -->
                     </div>
                 </div>
-                <!-- Card Section End -->
-
             </div>
             <div class="col-9">
                 <h1>Peduli Diri &ndash; Catatan Perjalanan</h1>
